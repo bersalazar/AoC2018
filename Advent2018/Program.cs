@@ -8,11 +8,13 @@ namespace Advent2018
     {
         static void Main(string[] args)
         {
-            var path = "./Inputs/1.input";
-            var input = GetInput(path);
-
-            Console.WriteLine($"Answer 1-A: {GetAnswer1A(input)}");
-            Console.WriteLine($"Answer 1-B: {GetAnswer1B(input)}");
+            for (var day = 1; day <= 24; day++)
+            {
+                var path = $"./Inputs/{day}.input";
+                var input = GetInput(path);
+                Console.WriteLine($"Answer {day.ToString()}-A: {GetAnswer1A(input)}");
+                Console.WriteLine($"Answer {day.ToString()}-B: {GetAnswer1B(input)}");
+            }
         }
 
         private static IEnumerable<String> GetInput(string path)
