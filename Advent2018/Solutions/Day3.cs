@@ -72,9 +72,6 @@ namespace Advent2018.Solutions
                claims.Add(new Claim(entry));
             }
 
-            var inches = 0;
-            var untouchedClaimId = "";
-            
             foreach (var claim in claims)
             {
                 //Height
@@ -86,7 +83,6 @@ namespace Advent2018.Solutions
                         if (!string.IsNullOrEmpty(matrix[i, j]))
                         {
                             matrix[i, j] = "X";
-                            claim.Touched = true;
                         }
                         else
                         {
@@ -94,16 +90,25 @@ namespace Advent2018.Solutions
                         }
                     }
                 }
-
             }
 
-            var untouchedClaim = "";
             foreach (var claim in claims)
             {
-                untouchedClaim = !claim.Touched ? claim.Id : "Not found";
+                //Height
+                for (int i = claim.PositionY; i < claim.PositionY + claim.Height; i++)
+                {
+                    //Width
+                    for (int j = claim.PositionX; j < claim.PositionX + claim.Width; j++)
+                    {
+                        if (matrix[i,j] == "X")
+                        {
+                            claim.Touched = true;
+                        }
+                    }
+                }
             }
 
-            return untouchedClaim;
-        }
+            return claims.Find(claim => !claim.Touched).Id;
+         }
     }
 }
