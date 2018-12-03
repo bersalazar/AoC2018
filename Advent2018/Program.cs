@@ -4,9 +4,9 @@ using System.IO;
 
 namespace Advent2018
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             for (var day = 1; day <= 24; day++)
             {
@@ -17,43 +17,41 @@ namespace Advent2018
             }
         }
 
-        private static IEnumerable<String> GetInput(string path)
+        private static IEnumerable<string> GetInput(string path)
         {
             var lines = File.ReadAllLines(path);
             return lines;
         }
 
-        private static String GetAnswer1A(IEnumerable<String> input)
+        private static string GetAnswer1A(IEnumerable<string> input)
         {
             var frequencies = 0;
-            foreach (String value in input)
+            foreach (var value in input)
             {
-                frequencies = frequencies + Int32.Parse(value);
+                frequencies = frequencies + int.Parse(value);
             }
             return frequencies.ToString();
         }
 
-        private static String GetAnswer1B(IEnumerable<String> input)
+        private static string GetAnswer1B(IEnumerable<string> input)
         {
             var frequency = 0;
-            var frecuenciesList = new HashSet<int>();
+            var frequenciesList = new HashSet<int>();
             var flag = true;
 
             while (flag) { 
                 foreach(var value in input)
                 {
-                    frequency += Int32.Parse(value);
-                    if (frecuenciesList.Contains(frequency))
+                    frequency += int.Parse(value);
+                    if (frequenciesList.Contains(frequency))
                     {
-                        Console.WriteLine($"First frecuency reached twice is: {frequency}");
                         flag = false;
                         break;
                     }
-                    frecuenciesList.Add(frequency);
+                    frequenciesList.Add(frequency);
                 }
             }
             return frequency.ToString();
-
         }
     }
 }
