@@ -43,29 +43,41 @@ namespace Advent2018.Solutions
                 var start = entry.IndexOf("]") + 2;
                 var end = entry.Length - start;
                 var log = entry.Substring(start, end);
+                
+                // parsed and sorted entries
                 parsedEntries.Add(dateTime, log);
             });
 
             var allDays = new List<Day>();
 
-            var lastDay = 0;    
+            var yesterday = 0;
             foreach (var entry in parsedEntries)
             {
                 // this part will loop the days and create a new day object if the day changes
-                var currentDay = entry.Key;
-                if (currentDay.Day != lastDay)
+                var date = entry.Key;
+                var today = date.Day;
+                if (today != yesterday)
                 {
                     var day = new Day();
-                    day.Date = $"{entry.Key.Month}-{entry.Key.Day}";
+                    day.Date = $"{date.Month}-{date.Day}";
                     if (entry.Value.StartsWith("Guard"))
                     {
                         day.GuardId = new String(entry.Value.Where(Char.IsDigit).ToArray());
                     }
 
-                    lastDay = currentDay.Day;
+                    yesterday = today;
                 }
                 else
                 {
+                    if (entry.Value.StartsWith("falls"))
+                    {
+                        var sleepsAt = date.Minute;
+                    }
+                    else if (entry.Value.StartsWith("wakes"))
+                    {
+                        var awakesAt = date.Minute;
+                    }
+
                     // here we can do something with the falls asleep or awakes logs
                 }
             }
