@@ -32,9 +32,15 @@ namespace Advent2018.Solutions
                 "[1518-11-05 00:55] wakes up"
             };
 
-            var parsedEntries = new Dictionary<DateTime, string>();
-
+            //1. read the logs
+            //it's in input method parameter
+            
+            //2. sort the logs into a new object
             entries.Sort();
+            
+            
+            var parsedLogs = new Dictionary<DateTime, string>();
+            
             entries.ForEach(entry =>
             {
                 var dateTimeAsString = entry.Substring(entry.IndexOf("[") + 1, entry.IndexOf("]") - 1);
@@ -45,42 +51,71 @@ namespace Advent2018.Solutions
                 var log = entry.Substring(start, end);
                 
                 // parsed and sorted entries
-                parsedEntries.Add(dateTime, log);
+                parsedLogs.Add(dateTime, log);
             });
 
-            var allDays = new List<Day>();
-
-            var yesterday = 0;
-            foreach (var entry in parsedEntries)
+            //3. for each guard, sum the minutes asleep
+            var guardsAsleep = new Dictionary<string, int>();
+            var minuteWhenFallsAsleep = 0;
+            var guardId = "";
+            
+            foreach (var log in parsedLogs)
             {
-                // this part will loop the days and create a new day object if the day changes
-                var date = entry.Key;
-                var today = date.Day;
-                if (today != yesterday)
+                if (log.Value.StartsWith("Guard"))
                 {
-                    var day = new Day();
-                    day.Date = $"{date.Month}-{date.Day}";
-                    if (entry.Value.StartsWith("Guard"))
-                    {
-                        day.GuardId = new String(entry.Value.Where(Char.IsDigit).ToArray());
-                    }
-
-                    yesterday = today;
+                    guardId = new String(log.Value.Where(Char.IsDigit).ToArray());
+                    if (!guardsAsleep.ContainsKey(guardId)) guardsAsleep.Add(guardId, 0);
                 }
-                else
-                {
-                    if (entry.Value.StartsWith("falls"))
-                    {
-                        var sleepsAt = date.Minute;
-                    }
-                    else if (entry.Value.StartsWith("wakes"))
-                    {
-                        var awakesAt = date.Minute;
-                    }
 
-                    // here we can do something with the falls asleep or awakes logs
+                if (log.Value.StartsWith("falls"))
+                {
+                    minuteWhenFallsAsleep = log.Key.Minute;
+                }
+
+                if (log.Value.StartsWith("wakes"))
+                {
+                    var minuteWhenAwakes = log.Key.Minute;
+                    guardsAsleep[guardId] = guardsAsleep[guardId] + minuteWhenAwakes - minuteWhenFallsAsleep;
                 }
             }
+            
+            //4. for each guard, count the times of each minute he is sleep
+            //5. grab the guard with the highest sum of sleep
+            //6. with this guard ID, select the highest sleep minute
+            //7. ID * highest sleep minute
+
+//            var allDays = new List<Day>();
+//            var yesterday = 0;
+//            foreach (var entry in parsedEntries)
+//            {
+//                // this part will loop the days and create a new day object if the day changes
+//                var date = entry.Key;
+//                var today = date.Day;
+//                if (today != yesterday)
+//                {
+//                    var day = new Day();
+//                    day.Date = $"{date.Month}-{date.Day}";
+//                    if (entry.Value.StartsWith("Guard"))
+//                    {
+//                        day.GuardId = new String(entry.Value.Where(Char.IsDigit).ToArray());
+//                    }
+//
+//                    yesterday = today;
+//                }
+//                else
+//                {
+//                    if (entry.Value.StartsWith("falls"))
+//                    {
+//                        var sleepsAt = date.Minute;
+//                    }
+//                    else if (entry.Value.StartsWith("wakes"))
+//                    {
+//                        var awakesAt = date.Minute;
+//                    }
+//
+//                    // here we can do something with the falls asleep or awakes logs
+//                }
+//            }
             
             return "";
         }

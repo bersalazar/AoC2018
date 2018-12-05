@@ -664,28 +664,30 @@
     ]
   },
   "packageFolders": {
-    "/Users/bernardo/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\Bernardo\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/bernardo/devel/advent2018/Advent2018/Advent2018.csproj",
+      "projectUniqueName": "C:\\Users\\Bernardo\\projects\\AoC2018\\Advent2018\\Advent2018.csproj",
       "projectName": "Advent2018",
-      "projectPath": "/Users/bernardo/devel/advent2018/Advent2018/Advent2018.csproj",
-      "packagesPath": "/Users/bernardo/.nuget/packages/",
-      "outputPath": "/Users/bernardo/devel/advent2018/Advent2018/obj/",
+      "projectPath": "C:\\Users\\Bernardo\\projects\\AoC2018\\Advent2018\\Advent2018.csproj",
+      "packagesPath": "C:\\Users\\Bernardo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Bernardo\\projects\\AoC2018\\Advent2018\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/bernardo/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Bernardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
