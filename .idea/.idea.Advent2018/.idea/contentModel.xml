@@ -7,10 +7,20 @@
         <e p="Advent2018.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Inputs" t="Include">
-          <e p="1.input" t="Include" />
-          <e p="2.input" t="Include" />
-          <e p="3.input" t="Include" />
-          <e p="4.input" t="Include" />
+          <e p="b" t="Include">
+            <e p="1.input" t="Include" />
+            <e p="2.input" t="Include" />
+            <e p="3.input" t="Include" />
+            <e p="4.input" t="Include" />
+            <e p="5.input" t="Include" />
+          </e>
+          <e p="j" t="Include">
+            <e p="1.input" t="Include" />
+            <e p="2.input" t="Include" />
+            <e p="3.input" t="Include" />
+            <e p="4.input" t="Include" />
+            <e p="5.input" t="Include" />
+          </e>
         </e>
         <e p="Model" t="Include">
           <e p="Claim.cs" t="Include" />
@@ -28,6 +38,7 @@
           <e p="Day2.cs" t="Include" />
           <e p="Day3.cs" t="Include" />
           <e p="Day4.cs" t="Include" />
+          <e p="Day5.cs" t="Include" />
         </e>
       </e>
       <e p="Advent2018.sln" t="IncludeFlat" />

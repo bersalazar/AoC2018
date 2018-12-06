@@ -7,12 +7,12 @@ namespace Advent2018.Solutions
     {
         public static string GetAnswerA(IEnumerable<string> input)
         {
-            throw new NotImplementedException();
+            return "not here yet";
         }
 
         public static string GetAnswerB(IEnumerable<string> input)
         {
-            throw new NotImplementedException();
+            return "not here yet";
         }
     }
 }

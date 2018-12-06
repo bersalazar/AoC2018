@@ -7,5 +7,6 @@
 
   <ItemGroup>
     <Folder Include="Inputs\" />
+    <Folder Include="Inputs\j" />
   </ItemGroup>
 </Project>
