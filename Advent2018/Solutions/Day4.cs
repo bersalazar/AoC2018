@@ -11,7 +11,8 @@ namespace Advent2018.Solutions
     {
         public static string GetAnswerA(IEnumerable<string> input)
         {
-            var entries = new List<string>
+            var test = false;
+            var entries = test ? new List<string>
             {
                 "[1518-11-01 00:05] falls asleep",
                 "[1518-11-01 00:00] Guard #10 begins shift",
@@ -30,14 +31,10 @@ namespace Advent2018.Solutions
                 "[1518-11-05 00:03] Guard #99 begins shift",
                 "[1518-11-05 00:45] falls asleep",
                 "[1518-11-05 00:55] wakes up"
-            };
+            } : input.ToList();
 
-            //1. read the logs
-            //it's in input method parameter
-            
-            //2. sort the logs into a new object
+            //sort the logs into a new object
             entries.Sort();
-            
             
             var parsedLogs = new Dictionary<DateTime, string>();
             
@@ -54,10 +51,11 @@ namespace Advent2018.Solutions
                 parsedLogs.Add(dateTime, log);
             });
 
-            //3. for each guard, sum the minutes asleep
+            //for each guard, sum the minutes asleep
             var guardsAsleep = new Dictionary<string, int>();
             var minuteWhenFallsAsleep = 0;
             var guardId = "";
+            var minutesWhereGuardsSlept = new Dictionary<string, List<string>> ();
             
             foreach (var log in parsedLogs)
             {
@@ -75,49 +73,35 @@ namespace Advent2018.Solutions
                 if (log.Value.StartsWith("wakes"))
                 {
                     var minuteWhenAwakes = log.Key.Minute;
+                    
+                    //total time each guard is asleep
                     guardsAsleep[guardId] = guardsAsleep[guardId] + minuteWhenAwakes - minuteWhenFallsAsleep;
+
+                    //for each guard, count the times of each minute he is sleep
+                    for (int min = minuteWhenFallsAsleep; min <= minuteWhenAwakes; min++)
+                    {
+                        if (!minutesWhereGuardsSlept.ContainsKey(guardId)) {
+                            minutesWhereGuardsSlept.Add(guardId, new List<string>());
+                        }
+
+                        //minutes that each guard slept
+                        minutesWhereGuardsSlept[guardId].Add(Convert.ToString(min));
+                    }
                 }
             }
             
-            //4. for each guard, count the times of each minute he is sleep
-            //5. grab the guard with the highest sum of sleep
-            //6. with this guard ID, select the highest sleep minute
-            //7. ID * highest sleep minute
-
-//            var allDays = new List<Day>();
-//            var yesterday = 0;
-//            foreach (var entry in parsedEntries)
-//            {
-//                // this part will loop the days and create a new day object if the day changes
-//                var date = entry.Key;
-//                var today = date.Day;
-//                if (today != yesterday)
-//                {
-//                    var day = new Day();
-//                    day.Date = $"{date.Month}-{date.Day}";
-//                    if (entry.Value.StartsWith("Guard"))
-//                    {
-//                        day.GuardId = new String(entry.Value.Where(Char.IsDigit).ToArray());
-//                    }
-//
-//                    yesterday = today;
-//                }
-//                else
-//                {
-//                    if (entry.Value.StartsWith("falls"))
-//                    {
-//                        var sleepsAt = date.Minute;
-//                    }
-//                    else if (entry.Value.StartsWith("wakes"))
-//                    {
-//                        var awakesAt = date.Minute;
-//                    }
-//
-//                    // here we can do something with the falls asleep or awakes logs
-//                }
-//            }
+            //grab the guard with the highest sum of sleep
+            var sleepyGuard = guardsAsleep.OrderByDescending(g => g.Value).First().Key;
             
-            return "";
+            //with this guard ID, select the highest sleep minute
+            var minuteWhereGuardSleptMost = minutesWhereGuardsSlept[sleepyGuard]
+                .GroupBy(s => s)
+                .OrderByDescending(s => s.Count())
+                .First().Key;
+            
+            //ID * highest sleep minute
+            return Convert.ToString(int.Parse(sleepyGuard) * int.Parse(minuteWhereGuardSleptMost));
+            //return "";
         }
     }
 }
