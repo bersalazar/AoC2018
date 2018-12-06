@@ -2,37 +2,33 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Net.Sockets;
-using Advent2018.Model;
 
 namespace Advent2018.Solutions
 {
-    public class Day4
+    public static class Day4
     {
         public static string GetAnswerA(IEnumerable<string> input)
         {
-            var test = false;
-            var entries = test ? new List<string>
-            {
-                "[1518-11-01 00:05] falls asleep",
-                "[1518-11-01 00:00] Guard #10 begins shift",
-                "[1518-11-01 00:25] wakes up",
-                "[1518-11-01 00:30] falls asleep",
-                "[1518-11-01 00:55] wakes up",
-                "[1518-11-01 23:58] Guard #99 begins shift",
-                "[1518-11-02 00:40] falls asleep",
-                "[1518-11-02 00:50] wakes up",
-                "[1518-11-03 00:05] Guard #10 begins shift",
-                "[1518-11-03 00:24] falls asleep",
-                "[1518-11-03 00:29] wakes up",
-                "[1518-11-04 00:02] Guard #99 begins shift",
-                "[1518-11-04 00:36] falls asleep",
-                "[1518-11-04 00:46] wakes up",
-                "[1518-11-05 00:03] Guard #99 begins shift",
-                "[1518-11-05 00:45] falls asleep",
-                "[1518-11-05 00:55] wakes up"
-            } : input.ToList();
+            //ID * highest sleep minute
+            var answer = ProcessEntries(input.ToList());
+            var sleepyGuard = int.Parse((string) answer["sleepyGuard"]);
+            var minuteWhereGuardSleptMost = int.Parse((string) answer["minuteWhereGuardSleptMost"]);
+            
+            return Convert.ToString(sleepyGuard * minuteWhereGuardSleptMost);
+        }
 
+        public static string GetAnswerB(IEnumerable<string> input)
+        {
+            //ID * highest sleep minute
+            var answer = ProcessEntries(input.ToList());
+            var mfmc = int.Parse((string) answer["mostFrequentMinute"]);
+            var mfmg = int.Parse((string) answer["mostFrequentMinuteGuardId"]);
+
+            return Convert.ToString(mfmg * mfmc);
+        }
+        
+        public static Dictionary<string, object> ProcessEntries(List<string> entries)
+        {
             //sort the logs into a new object
             entries.Sort();
             
@@ -40,10 +36,10 @@ namespace Advent2018.Solutions
             
             entries.ForEach(entry =>
             {
-                var dateTimeAsString = entry.Substring(entry.IndexOf("[") + 1, entry.IndexOf("]") - 1);
+                var dateTimeAsString = entry.Substring(entry.IndexOf("[", StringComparison.Ordinal) + 1, entry.IndexOf("]", StringComparison.Ordinal) - 1);
                 var dateTime = DateTime.ParseExact(dateTimeAsString, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture);
 
-                var start = entry.IndexOf("]") + 2;
+                var start = entry.IndexOf("]", StringComparison.Ordinal) + 2;
                 var end = entry.Length - start;
                 var log = entry.Substring(start, end);
                 
@@ -56,6 +52,7 @@ namespace Advent2018.Solutions
             var minuteWhenFallsAsleep = 0;
             var guardId = "";
             var minutesWhereGuardsSlept = new Dictionary<string, List<string>> ();
+            var minuteCounter = new Dictionary<string, Dictionary<string, int>>();
             
             foreach (var log in parsedLogs)
             {
@@ -78,11 +75,28 @@ namespace Advent2018.Solutions
                     guardsAsleep[guardId] = guardsAsleep[guardId] + minuteWhenAwakes - minuteWhenFallsAsleep;
 
                     //for each guard, count the times of each minute he is sleep
-                    for (int min = minuteWhenFallsAsleep; min <= minuteWhenAwakes; min++)
+                    for (int min = minuteWhenFallsAsleep; min < minuteWhenAwakes; min++)
                     {
+                        var minuteString = Convert.ToString(min);
                         if (!minutesWhereGuardsSlept.ContainsKey(guardId)) {
                             minutesWhereGuardsSlept.Add(guardId, new List<string>());
                         }
+
+                        //for each guard, store how many times a minute he's sleep
+                        if (!minuteCounter.ContainsKey(guardId))
+                        {
+                            minuteCounter.Add(guardId, new Dictionary<string, int>()
+                            {
+                                {minuteString, 0}
+                            });
+                        }
+                        
+                        if (!minuteCounter[guardId].ContainsKey(minuteString))
+                        {
+                            minuteCounter[guardId].Add(minuteString, 0);
+                        }
+                        
+                        minuteCounter[guardId][minuteString]++;
 
                         //minutes that each guard slept
                         minutesWhereGuardsSlept[guardId].Add(Convert.ToString(min));
@@ -99,9 +113,31 @@ namespace Advent2018.Solutions
                 .OrderByDescending(s => s.Count())
                 .First().Key;
             
-            //ID * highest sleep minute
-            return Convert.ToString(int.Parse(sleepyGuard) * int.Parse(minuteWhereGuardSleptMost));
-            //return "";
+            // PART B
+            // guard who is most frequently asleep on the same minute
+            var max = 0;
+            var minute = "";
+            var guard = "";
+            foreach (var g in minuteCounter)
+            {
+                foreach (var m in g.Value)
+                {
+                    if (m.Value > max)
+                    {
+                        max = m.Value;
+                        guard = g.Key;
+                        minute = m.Key;
+                    }
+                }
+            }
+
+            return new Dictionary<string, object>()
+            {
+                {"minuteWhereGuardSleptMost", minuteWhereGuardSleptMost},
+                {"sleepyGuard", sleepyGuard},
+                {"mostFrequentMinute", minute},
+                {"mostFrequentMinuteGuardId", guard}
+            };
         }
     }
 }

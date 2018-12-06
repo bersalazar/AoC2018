@@ -16,7 +16,7 @@ namespace Advent2018
             Console.WriteLine($"Answer 3-A: {Day3.GetAnswerA(GetInput($"./Inputs/3.input"))}");
             Console.WriteLine($"Answer 3-B: {Day3.GetAnswerB(GetInput($"./Inputs/3.input"))}");
             Console.WriteLine($"Answer 4-A: {Day4.GetAnswerA(GetInput($"./Inputs/4.input"))}");
-            //Console.WriteLine($"Answer 4-B: {Day4.GetAnswerB(GetInput($"./Inputs/4.input"))}");
+            Console.WriteLine($"Answer 4-B: {Day4.GetAnswerB(GetInput($"./Inputs/4.input"))}");
         }
 
         private static IEnumerable<string> GetInput(string path)
