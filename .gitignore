@@ -1,11 +1,14 @@
 .DS_Store
 
 .vs/
-.idea/
+.idea
 Advent2018/obj/
 Advent2018/.vs/
 Advent2018/.idea/
 Advent2018/bin/
+Advent2018.Tests/bin/
+Advent2018.Tests/obj/
+
 
 
 
