@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6e2ef5b9-9106-43f2-9e99-bf86e66b937c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Advent2018/Test/Day1.Test.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Advent2018/Test/Day4.Test.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Advent2018/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Advent2018/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Advent2018/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Advent2018/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Advent2018/Model/Claim.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Advent2018/Model/Claim.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Advent2018/bin/Debug/netcoreapp2.0/Advent2018.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Advent2018/bin/Debug/netcoreapp2.0/Advent2018.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Advent2018/bin/Debug/netcoreapp2.0/Advent2018.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Advent2018/bin/Debug/netcoreapp2.0/Advent2018.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Advent2018/obj/Debug/netcoreapp2.0/Advent2018.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Advent2018/obj/Debug/netcoreapp2.0/Advent2018.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Advent2018/obj/Debug/netcoreapp2.0/Advent2018.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Advent2018/obj/Debug/netcoreapp2.0/Advent2018.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Advent2018/obj/Debug/netcoreapp2.0/Advent2018.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Advent2018/obj/Debug/netcoreapp2.0/Advent2018.pdb" afterDir="false" />
-    </list>
+    <list default="true" id="6e2ef5b9-9106-43f2-9e99-bf86e66b937c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,8 +93,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Advent2018/Test/Day4.Test.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+            <state relative-caret-position="180">
+              <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
               <folding>
                 <marker date="1544166102033" expanded="true" signature="60:1196" ph="{...}" />
                 <marker date="1544166102033" expanded="true" signature="89:1194" ph="{...}" />
@@ -342,12 +331,12 @@
       <workItem from="1544119708940" duration="15041000" />
       <workItem from="1544165057939" duration="148000" />
       <workItem from="1544165212957" duration="357000" />
-      <workItem from="1544165630581" duration="492000" />
+      <workItem from="1544165630581" duration="585000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16048000" />
+    <option name="totallyTimeSpent" value="16141000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -616,8 +605,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Advent2018/Test/Day4.Test.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="10" lean-forward="true" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
+        <state relative-caret-position="180">
+          <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
           <folding>
             <marker date="1544166102033" expanded="true" signature="60:1196" ph="{...}" />
             <marker date="1544166102033" expanded="true" signature="89:1194" ph="{...}" />
