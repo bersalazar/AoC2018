@@ -12,12 +12,11 @@ namespace Advent2018
         {    
             var both = new List<string>()
             {
-                "b","j"
+                "b"
             };
             
             both.ForEach(grdt =>
             {
-                Console.WriteLine();
                 Console.WriteLine($"Answer 1-A: {Day1.GetAnswerA(GetInput($"./Inputs/{grdt}/1.input"))}");
                 Console.WriteLine($"Answer 1-B: {Day1.GetAnswerB(GetInput($"./Inputs/{grdt}/1.input"))}");
                 Console.WriteLine($"Answer 2-A: {Day2.GetAnswerA(GetInput($"./Inputs/{grdt}/2.input"))}");
@@ -27,7 +26,9 @@ namespace Advent2018
                 Console.WriteLine($"Answer 4-A: {Day4.GetAnswerA(GetInput($"./Inputs/{grdt}/4.input"))}");
                 Console.WriteLine($"Answer 4-B: {Day4.GetAnswerB(GetInput($"./Inputs/{grdt}/4.input"))}");
                 Console.WriteLine($"Answer 5-A: {Day5.GetAnswerA(GetInputString($"./Inputs/{grdt}/5.input"))}");
-                Console.WriteLine($"Answer 5-B: {Day5.GetAnswerB(GetInputString($"./Inputs/{grdt}/5.input"))}");
+                //Console.WriteLine($"Answer 5-B: {Day5.GetAnswerB(GetInputString($"./Inputs/{grdt}/5.input"))}");
+                Console.WriteLine($"Answer 7-A: {Day7.GetAnswerA(GetInput($"./Inputs/{grdt}/7.input"))}");
+                Console.WriteLine($"Answer 7-B: {Day7.GetAnswerB(GetInput($"./Inputs/{grdt}/7.input"))}");
             });
         }
 
