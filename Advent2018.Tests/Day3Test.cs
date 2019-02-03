@@ -16,8 +16,8 @@ namespace Advent2018.Tests
                 "#3 @ 5,5: 2x2"
             };
             
-            Assert.Equal("240", Day3.GetAnswerA(input));
-            Assert.Equal("4455", Day3.GetAnswerB(input));
+            Assert.Equal("240", new Solution3A(input).Answer);
+            Assert.Equal("4455", new Solution3B(input).Answer);
         }
     }
 }

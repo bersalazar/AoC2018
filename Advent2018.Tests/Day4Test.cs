@@ -29,8 +29,8 @@ namespace Advent2018.Tests
                 "[1518-11-05 00:45] falls asleep",
                 "[1518-11-05 00:55] wakes up"
             };
-            Assert.Equal("240", Day4.GetAnswerA(input));
-            Assert.Equal("4455", Day4.GetAnswerB(input));
+            Assert.Equal("240", new Solution4A(input).Answer);
+            Assert.Equal("4455", new Solution4B(input).Answer);
         }
     }
 }

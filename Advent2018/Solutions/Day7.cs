@@ -145,7 +145,7 @@ namespace Advent2018.Solutions
             // Grab the unique initial step
             var initialStep = stepsWithNoPrecedence.First();
 
-            // Add the initial step to the ordered results list
+            // Add the initial step qto the ordered results list
             var resultList = new List<char> {initialStep};
 
             var count = resultList.Count;

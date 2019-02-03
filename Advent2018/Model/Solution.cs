@@ -1,9 +1,7 @@
-using System.Collections;
-
-namespace Advent2018
+namespace Advent2018.Model
 {
     public abstract class Solution
     {
-        public abstract string GetAnswer();
+        public string Answer { get; protected set; }
     }
 }
