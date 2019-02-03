@@ -1,11 +1,10 @@
 using System.Collections.Generic;
+using Advent2018.Model;
 
 namespace Advent2018.Solutions
 {
     public class Solution1B : Solution
     {
-        private readonly string _answer;
-
         public Solution1B(IEnumerable<string> input)
         {
             var frequency = 0;
@@ -24,12 +23,7 @@ namespace Advent2018.Solutions
                     frequenciesList.Add(frequency);
                 }
             }
-            _answer = frequency.ToString();
-        }
-
-        public override string GetAnswer()
-        {
-            return _answer;
+            Answer = frequency.ToString();
         }
     }
 }

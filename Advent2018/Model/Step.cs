@@ -5,7 +5,7 @@ namespace Advent2018.Solutions
     public class Step
     {
         public char Id;
-        public int Time;
+        private int _time;
         public bool IsAvailable;
         public List<char> Precedents { get; } = new List<char>();
 
@@ -17,7 +17,7 @@ namespace Advent2018.Solutions
         public Step(char stepId)
         {
             Id = stepId;
-            Time = 60 + char.ToUpper(Id) - 64; 
+            _time = 60 + char.ToUpper(Id) - 64; 
         }
     }
 }
