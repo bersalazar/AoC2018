@@ -2,19 +2,11 @@ using System.Collections.Generic;
 
 namespace Advent2018.Solutions
 {
-    public class Day1
+    public class Solution1B : Solution
     {
-        public static string GetAnswerA(IEnumerable<string> input)
-        {
-            var frequencies = 0;
-            foreach (var value in input)
-            {
-                frequencies = frequencies + int.Parse(value);
-            }
-            return frequencies.ToString();
-        }
+        private readonly string _answer;
 
-        public static string GetAnswerB(IEnumerable<string> input)
+        public Solution1B(IEnumerable<string> input)
         {
             var frequency = 0;
             var frequenciesList = new HashSet<int>();
@@ -32,7 +24,12 @@ namespace Advent2018.Solutions
                     frequenciesList.Add(frequency);
                 }
             }
-            return frequency.ToString();
+            _answer = frequency.ToString();
+        }
+
+        public override string GetAnswer()
+        {
+            return _answer;
         }
     }
 }
