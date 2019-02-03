@@ -1,4 +1,4 @@
-namespace Advent2018.Solutions
+namespace Advent2018.Model
 {
     public class Claim
     {

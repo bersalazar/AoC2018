@@ -1,6 +1,5 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
+using Advent2018.Model;
 
 namespace Advent2018.Solutions
 {
@@ -8,15 +7,7 @@ namespace Advent2018.Solutions
     {
         public static string GetAnswerA(IEnumerable<string> input)
         {
-
             var matrix = new string[1000, 1000];
-            var entries = new List<string>
-            {
-                "#1 @ 1,3: 4x4",
-                "#2 @ 3,1: 4x4",
-                "#3 @ 5,5: 2x2"
-            };
-
             var claims = new List<Claim>();
             
             foreach (var entry in input)
@@ -56,15 +47,7 @@ namespace Advent2018.Solutions
         
         public static string GetAnswerB(IEnumerable<string> input)
         {
-
             var matrix = new string[1000, 1000];
-            var entries = new List<string>
-            {
-                "#1 @ 1,3: 4x4",
-                "#2 @ 3,1: 4x4",
-                "#3 @ 5,5: 2x2"
-            };
-
             var claims = new List<Claim>();
             
             foreach (var entry in input)
