@@ -6,12 +6,9 @@ namespace Advent2018.Solutions
 {
     public static class Day5
     {
-        private static bool Test = false;
-        public static string TestInput = "dabAcCaCBAcCcaDA";
-
         public static string GetAnswerA(string input)
         {
-            var entryAsList = Test ? TestInput.ToList() : input.ToList();
+            var entryAsList = input.ToList();
             return Convert.ToString(FullyReactPolymer(entryAsList).Count);
         }
 
@@ -48,7 +45,7 @@ namespace Advent2018.Solutions
 
         public static string GetAnswerB(string input)
         {
-            var entryAsList = Test ? TestInput.ToList() : input.ToList();
+            var entryAsList = input.ToList();
             var fullyReactedList = new List<int>();
             var uniqueUnitTypes = 
                 entryAsList

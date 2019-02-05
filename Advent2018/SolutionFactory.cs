@@ -15,7 +15,7 @@ namespace Advent2018
 
         public Solution ProcessSolution(int day, char section)
         {
-            var input = (new SolutionInput(_participant, day)).ReadInput();
+            var input = new SolutionInput(_participant, day).ReadInput();
             var daySection = $"{day}{section}";
             switch (daySection)
             {
@@ -36,9 +36,11 @@ namespace Advent2018
                 case "4B":
                     return new Solution4B(input);
                 case "5A":
-                    //return new Solution5A(input);
+                    return new Solution5A(input);
                 case "5B":
-                    //return new Solution5B(input);
+                    return new Solution5B(input);
+                case "7A":
+                    return new Solution7A(input);
                 default:
                     throw new Exception($"SolutionNotFoundException");
             }

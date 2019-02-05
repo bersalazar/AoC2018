@@ -47,12 +47,5 @@ namespace Advent2018
                 .ProcessSolution(day, section)
                 .Answer;
         }
-        private static string GetInputString(string path)
-        {
-            var lines = File.ReadAllLines(path).First();
-            return lines;
-        }        
     }
-
-    
 }
