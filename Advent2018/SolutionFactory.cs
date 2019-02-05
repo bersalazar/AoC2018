@@ -40,7 +40,7 @@ namespace Advent2018
                 case "5B":
                     //return new Solution5B(input);
                 default:
-                    throw new ApplicationException($"An answer has not been implemented for {daySection}");
+                    throw new Exception($"SolutionNotFoundException");
             }
         }
     }

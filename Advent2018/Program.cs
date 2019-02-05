@@ -22,7 +22,20 @@ namespace Advent2018
                     _solutionFactory = new SolutionFactory(participant);
                     Sections.ForEach(section =>
                     {
-                        Console.WriteLine($"Participant: {participant}. Day {day}-{section}: {GetAnswerFor(day, section)}");
+                        var answer = "";
+                        try
+                        {
+                            answer = GetAnswerFor(day, section);
+                        }
+                        catch (Exception ex) when (string.Equals(ex.Message, "SolutionNotFoundException"))
+                        {
+                            answer = "A solution was not found";
+                        }
+                        catch (FileNotFoundException)
+                        {
+                            answer = "An input file was not found";
+                        }
+                        Console.WriteLine($"Participant: {participant}. Day {day}-{section}: {answer}");
                     });
                 });    
             });
