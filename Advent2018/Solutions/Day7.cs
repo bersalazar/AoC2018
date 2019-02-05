@@ -1,20 +1,17 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Advent2018.Model;
 
 namespace Advent2018.Solutions
 {
-    public class Day7
+    public static class Day7
     {
-        private const bool IsNotComplete = false;
-        private const bool IsComplete = true;
-        
         public static string GetAnswerA(IEnumerable<string> input)
         {
             var stepsList = new Dictionary<char, Step>(); 
             var allStepsThatHavePrecedent = new List<char>();
+            
             // Build each object's precedence list
             foreach (var instruction in input)
             {

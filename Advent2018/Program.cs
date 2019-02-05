@@ -22,7 +22,7 @@ namespace Advent2018
                     _solutionFactory = new SolutionFactory(participant);
                     Sections.ForEach(section =>
                     {
-                        var answer = "";
+                        string answer;
                         try
                         {
                             answer = GetAnswerFor(day, section);

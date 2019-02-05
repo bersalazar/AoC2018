@@ -40,33 +40,7 @@ namespace Advent2018.Solutions
             
             return polymer;
         }
-        
-        private static List<char> SimpleReactPolymer(List<char> polymer, char unitType)
-        {
-            var initialSize = polymer.Count;
-            for (var i = 0; i < polymer.Count-1; i++)
-            {
-                if (!AreCharsEqual(polymer[i], unitType)) continue;
-                if (char.IsLower(polymer[i]) && char.IsUpper(polymer[i + 1]))
-                {
-                    polymer.RemoveAt(i);
-                    polymer.RemoveAt(i);
-                }
-                else if (char.IsUpper(polymer[i]) && char.IsLower(polymer[i + 1]))
-                {
-                    polymer.RemoveAt(i);
-                    polymer.RemoveAt(i);
-                }
-            }
 
-            if (polymer.Count < initialSize)
-            {
-                FullyReactPolymer(polymer);                
-            }
-            
-            return polymer;
-        }
-        
         private static bool AreCharsEqual(char s1, char s2)
         {
             return char.ToUpperInvariant(s1).Equals(char.ToUpperInvariant(s2));
