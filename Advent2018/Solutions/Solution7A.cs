@@ -31,7 +31,6 @@ namespace Advent2018.Solutions
                 stepsList[step.Id].Precedents.Add(precedent);
             }
 
-            
             // Create a list of steps that have no precedence
             var stepsWithNoPrecedence = 
                 allStepsThatHavePrecedent
@@ -54,7 +53,7 @@ namespace Advent2018.Solutions
             var totalSteps = stepsList.Keys.Count;
             while (count < totalSteps)
             {
-                var nextStep = GetNextStep(stepsList, resultList);
+                var nextStep = Library.GetNextStep(stepsList, resultList);
                 if (!resultList.Contains(nextStep))
                 {
                     resultList.Add(nextStep);
@@ -66,41 +65,6 @@ namespace Advent2018.Solutions
             var constructedString = new StringBuilder();
             resultList.ForEach(character => constructedString.Append(character));
             Answer = constructedString.ToString();
-        }
-        
-        private static char GetNextStep(Dictionary<char, Step> stepsList, List<char> resultList)
-        {
-            foreach (var step in stepsList.Keys)
-            {
-                var allPrecedentsAreComplete = stepsList[step].Precedents.TrueForAll(p =>
-                {
-                    try
-                    {
-                        return p == resultList.Find(r => r == p);
-                    }
-                    catch
-                    {
-                        return false;
-                    }
-                });
-
-                if (allPrecedentsAreComplete)
-                {
-                    stepsList[step].IsAvailable = true;
-                }
-            }
-            
-            // Sort alphabetically the available steps
-            var availableSteps = stepsList.Keys.Where(s => stepsList[s].IsAvailable).ToList();
-            availableSteps.Sort();
-
-            // remove values that were already in the result list
-            foreach (var result in resultList)
-            {
-                availableSteps.Remove(result);
-            }
-            
-            return availableSteps.First();
         }
     }
 }

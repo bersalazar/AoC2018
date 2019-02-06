@@ -20,7 +20,7 @@ namespace Advent2018.Tests
                 "Step F must be finished before step E can begin."
             };
             
-            Assert.Equal("CABDFE", Day7.GetAnswerA(input));
+            Assert.Equal("CABDFE", new Solution7A(input).Answer);
         }
     }
 }
