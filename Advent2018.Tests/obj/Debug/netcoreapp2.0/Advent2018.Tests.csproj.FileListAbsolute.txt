@@ -1,0 +1,15 @@
+/Users/bernardo/devel/advent2018/Advent2018.Tests/bin/Debug/netcoreapp2.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll
+/Users/bernardo/devel/advent2018/Advent2018.Tests/bin/Debug/netcoreapp2.0/xunit.runner.reporters.netcoreapp10.dll
+/Users/bernardo/devel/advent2018/Advent2018.Tests/bin/Debug/netcoreapp2.0/xunit.runner.utility.netcoreapp10.dll
+/Users/bernardo/devel/advent2018/Advent2018.Tests/bin/Debug/netcoreapp2.0/Advent2018.Tests.deps.json
+/Users/bernardo/devel/advent2018/Advent2018.Tests/bin/Debug/netcoreapp2.0/Advent2018.Tests.runtimeconfig.json
+/Users/bernardo/devel/advent2018/Advent2018.Tests/bin/Debug/netcoreapp2.0/Advent2018.Tests.runtimeconfig.dev.json
+/Users/bernardo/devel/advent2018/Advent2018.Tests/bin/Debug/netcoreapp2.0/Advent2018.Tests.dll
+/Users/bernardo/devel/advent2018/Advent2018.Tests/bin/Debug/netcoreapp2.0/Advent2018.Tests.pdb
+/Users/bernardo/devel/advent2018/Advent2018.Tests/bin/Debug/netcoreapp2.0/Advent2018.dll
+/Users/bernardo/devel/advent2018/Advent2018.Tests/bin/Debug/netcoreapp2.0/Advent2018.pdb
+/Users/bernardo/devel/advent2018/Advent2018.Tests/obj/Debug/netcoreapp2.0/Advent2018.Tests.csproj.CoreCompileInputs.cache
+/Users/bernardo/devel/advent2018/Advent2018.Tests/obj/Debug/netcoreapp2.0/Advent2018.Tests.AssemblyInfoInputs.cache
+/Users/bernardo/devel/advent2018/Advent2018.Tests/obj/Debug/netcoreapp2.0/Advent2018.Tests.AssemblyInfo.cs
+/Users/bernardo/devel/advent2018/Advent2018.Tests/obj/Debug/netcoreapp2.0/Advent2018.Tests.dll
+/Users/bernardo/devel/advent2018/Advent2018.Tests/obj/Debug/netcoreapp2.0/Advent2018.Tests.pdb

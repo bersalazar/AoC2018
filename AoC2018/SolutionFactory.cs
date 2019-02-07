@@ -17,6 +17,7 @@ namespace Advent2018
         {
             var input = new SolutionInput(_participant, day).ReadInput();
             var daySection = $"{day}{section}";
+            
             switch (daySection)
             {
                 case "1A":

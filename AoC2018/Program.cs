@@ -27,6 +27,7 @@ namespace Advent2018
                         {
                             answer = GetAnswerFor(day, section);
                         }
+                        //TODO: crear exception propia SolutionNotFound
                         catch (Exception ex) when (string.Equals(ex.Message, "SolutionNotFoundException"))
                         {
                             answer = "A solution was not found";
