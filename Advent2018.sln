@@ -1,9 +1,9 @@
-
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advent2018", "Advent2018\Advent2018.csproj", "{D706E382-F2EF-4875-BFBF-84FA1D44687D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC2018", "AoC2018\AoC2018.csproj", "{D706E382-F2EF-4875-BFBF-84FA1D44687D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Advent2018.Tests", "Advent2018.Tests\Advent2018.Tests.csproj", "{60480414-15BC-484B-BA55-7C0DF9E7A009}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AoC2018.Tests", "AoC2018.Tests\AoC2018.Tests.csproj", "{60480414-15BC-484B-BA55-7C0DF9E7A009}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,12 +2,12 @@
 
 .vs/
 .idea/
-Advent2018/obj/
-Advent2018/.vs/
-Advent2018/.idea/
-Advent2018/bin/
-Advent2018.Tests/bin/
-Advent2018.Tests/obj/
+AoC2018/obj/
+AoC2018/.vs/
+AoC2018/.idea/
+AoC2018/bin/
+AoC2018.Tests/bin/
+AoC2018.Tests/obj/
 *.user
 
 
