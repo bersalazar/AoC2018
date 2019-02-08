@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Advent2018.Tests
 {
-    public class Day6Test
+    public class Solution7ATest
     {
         [Fact]
         public void RunTests()

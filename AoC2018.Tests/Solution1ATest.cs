@@ -4,20 +4,21 @@ using Xunit;
 
 namespace Advent2018.Tests
 {
-    public class Day3Test
+    public class Solution1ATest
+    
     {
         [Fact]
         public void RunTests()
         {
             var input = new List<string>()
             {
-                "#1 @ 1,3: 4x4",
-                "#2 @ 3,1: 4x4",
-                "#3 @ 5,5: 2x2"
+                "+1",
+                "-2",
+                "+3",
+                "+1"
             };
             
-            Assert.Equal("240", new Solution3A(input).Answer);
-            Assert.Equal("4455", new Solution3B(input).Answer);
+            Assert.Equal("3", new Solution1A(input).Answer);
         }
     }
 }
