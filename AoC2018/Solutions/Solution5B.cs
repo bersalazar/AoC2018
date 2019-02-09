@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Advent2018.Model;
 
 namespace Advent2018.Solutions
@@ -19,9 +20,12 @@ namespace Advent2018.Solutions
             
             uniqueUnitTypes.ForEach(ut =>
             {
-                var originalEntryList = new List<char>(entryAsList);
-                originalEntryList.RemoveAll(eal => char.ToLowerInvariant(eal).Equals(ut.Key));
-                var fullyReacted = Library.FullyReactPolymer(originalEntryList);
+                var polymer = string.Join("", entryAsList.ToArray());
+                var polymerWithUnitRemoved = polymer
+                    .Replace(ut.Key.ToString(), "")
+                    .Replace(char.ToUpperInvariant(ut.Key).ToString(), "");
+                
+                var fullyReacted = Library.FullyReactPolymer(polymerWithUnitRemoved.ToList());
                 fullyReactedList.Add(fullyReacted.Count);
             });
             

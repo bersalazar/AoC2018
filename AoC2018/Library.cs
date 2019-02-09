@@ -33,7 +33,7 @@ namespace Advent2018.Solutions
 
             if (polymer.Count < initialSize)
             {
-                FullyReactPolymer(polymer);                
+                FullyReactPolymer(polymer);               
             }
             
             return polymer;
